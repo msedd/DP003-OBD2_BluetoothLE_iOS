@@ -14,6 +14,7 @@
 		5EA5C0B41BBB309200B188FA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EA5C0B31BBB309200B188FA /* Images.xcassets */; };
 		5EA5C0B71BBB309200B188FA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5EA5C0B51BBB309200B188FA /* LaunchScreen.xib */; };
 		5EA5C0C31BBB309200B188FA /* ConnectMyCarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5C0C21BBB309200B188FA /* ConnectMyCarTests.m */; };
+		DCA042C8E4C64B973C4511E5 /* libPods-ConnectMyCar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DA9CE37A1B28FFABE4B3DC87 /* libPods-ConnectMyCar.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B7BC68DAA0394E655B28F6E /* Pods-ConnectMyCar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectMyCar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectMyCar/Pods-ConnectMyCar.debug.xcconfig"; sourceTree = "<group>"; };
 		5EA5C0A31BBB309200B188FA /* ConnectMyCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectMyCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EA5C0A71BBB309200B188FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EA5C0A81BBB309200B188FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +42,8 @@
 		5EA5C0BC1BBB309200B188FA /* ConnectMyCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConnectMyCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EA5C0C11BBB309200B188FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EA5C0C21BBB309200B188FA /* ConnectMyCarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConnectMyCarTests.m; sourceTree = "<group>"; };
+		A99540946B2D9B07B400E966 /* Pods-ConnectMyCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectMyCar.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectMyCar/Pods-ConnectMyCar.release.xcconfig"; sourceTree = "<group>"; };
+		DA9CE37A1B28FFABE4B3DC87 /* libPods-ConnectMyCar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConnectMyCar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCA042C8E4C64B973C4511E5 /* libPods-ConnectMyCar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,12 +65,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		366E129798156110A22C52D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA9CE37A1B28FFABE4B3DC87 /* libPods-ConnectMyCar.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5EA5C09A1BBB309200B188FA = {
 			isa = PBXGroup;
 			children = (
 				5EA5C0A51BBB309200B188FA /* ConnectMyCar */,
 				5EA5C0BF1BBB309200B188FA /* ConnectMyCarTests */,
 				5EA5C0A41BBB309200B188FA /* Products */,
+				F39DD5C6ED2803D18A08F96C /* Pods */,
+				366E129798156110A22C52D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -119,6 +134,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		F39DD5C6ED2803D18A08F96C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4B7BC68DAA0394E655B28F6E /* Pods-ConnectMyCar.debug.xcconfig */,
+				A99540946B2D9B07B400E966 /* Pods-ConnectMyCar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -126,9 +150,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5EA5C0C61BBB309200B188FA /* Build configuration list for PBXNativeTarget "ConnectMyCar" */;
 			buildPhases = (
+				5A072ADA2DC242E55308BF84 /* Check Pods Manifest.lock */,
 				5EA5C09F1BBB309200B188FA /* Sources */,
 				5EA5C0A01BBB309200B188FA /* Frameworks */,
 				5EA5C0A11BBB309200B188FA /* Resources */,
+				703BF5F194E0778C4E51584E /* Copy Pods Resources */,
+				5EA5C0CC1BBBB5E600B188FA /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -213,6 +240,52 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A072ADA2DC242E55308BF84 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		5EA5C0CC1BBBB5E600B188FA /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/Fabric.framework/run\" ${FABRIC_API_KEY} {FABRIC_API_SECRET}";
+		};
+		703BF5F194E0778C4E51584E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ConnectMyCar/Pods-ConnectMyCar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5EA5C09F1BBB309200B188FA /* Sources */ = {
@@ -347,6 +420,7 @@
 		};
 		5EA5C0C71BBB309200B188FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B7BC68DAA0394E655B28F6E /* Pods-ConnectMyCar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ConnectMyCar/Info.plist;
@@ -357,6 +431,7 @@
 		};
 		5EA5C0C81BBB309200B188FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A99540946B2D9B07B400E966 /* Pods-ConnectMyCar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ConnectMyCar/Info.plist;
@@ -418,6 +493,7 @@
 				5EA5C0C81BBB309200B188FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5EA5C0C91BBB309200B188FA /* Build configuration list for PBXNativeTarget "ConnectMyCarTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +502,7 @@
 				5EA5C0CB1BBB309200B188FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
