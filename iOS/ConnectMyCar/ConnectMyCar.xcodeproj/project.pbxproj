@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E2BB6461BC3DC22001A86ED /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5E2BB6451BC3DC22001A86ED /* logo.png */; };
+		5E8D40781BC2651200A58F9B /* MeasurementView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D40771BC2651200A58F9B /* MeasurementView.m */; };
+		5E8D407B1BC3A56500A58F9B /* VehicleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D407A1BC3A56500A58F9B /* VehicleModel.m */; };
+		5E8D407E1BC3A58100A58F9B /* BLEController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E8D407D1BC3A58100A58F9B /* BLEController.m */; };
 		5EA5C0A91BBB309200B188FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5C0A81BBB309200B188FA /* main.m */; };
 		5EA5C0AC1BBB309200B188FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5C0AB1BBB309200B188FA /* AppDelegate.m */; };
 		5EA5C0AF1BBB309200B188FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EA5C0AE1BBB309200B188FA /* ViewController.m */; };
@@ -29,6 +33,13 @@
 
 /* Begin PBXFileReference section */
 		4B7BC68DAA0394E655B28F6E /* Pods-ConnectMyCar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectMyCar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectMyCar/Pods-ConnectMyCar.debug.xcconfig"; sourceTree = "<group>"; };
+		5E2BB6451BC3DC22001A86ED /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		5E8D40761BC2651200A58F9B /* MeasurementView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeasurementView.h; sourceTree = "<group>"; };
+		5E8D40771BC2651200A58F9B /* MeasurementView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeasurementView.m; sourceTree = "<group>"; };
+		5E8D40791BC3A56500A58F9B /* VehicleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VehicleModel.h; sourceTree = "<group>"; };
+		5E8D407A1BC3A56500A58F9B /* VehicleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VehicleModel.m; sourceTree = "<group>"; };
+		5E8D407C1BC3A58100A58F9B /* BLEController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLEController.h; sourceTree = "<group>"; };
+		5E8D407D1BC3A58100A58F9B /* BLEController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLEController.m; sourceTree = "<group>"; };
 		5EA5C0A31BBB309200B188FA /* ConnectMyCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ConnectMyCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EA5C0A71BBB309200B188FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EA5C0A81BBB309200B188FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -96,6 +107,11 @@
 		5EA5C0A51BBB309200B188FA /* ConnectMyCar */ = {
 			isa = PBXGroup;
 			children = (
+				5E2BB6451BC3DC22001A86ED /* logo.png */,
+				5E8D407C1BC3A58100A58F9B /* BLEController.h */,
+				5E8D407D1BC3A58100A58F9B /* BLEController.m */,
+				5E8D40791BC3A56500A58F9B /* VehicleModel.h */,
+				5E8D407A1BC3A56500A58F9B /* VehicleModel.m */,
 				5EA5C0AA1BBB309200B188FA /* AppDelegate.h */,
 				5EA5C0AB1BBB309200B188FA /* AppDelegate.m */,
 				5EA5C0AD1BBB309200B188FA /* ViewController.h */,
@@ -104,6 +120,8 @@
 				5EA5C0B31BBB309200B188FA /* Images.xcassets */,
 				5EA5C0B51BBB309200B188FA /* LaunchScreen.xib */,
 				5EA5C0A61BBB309200B188FA /* Supporting Files */,
+				5E8D40761BC2651200A58F9B /* MeasurementView.h */,
+				5E8D40771BC2651200A58F9B /* MeasurementView.m */,
 			);
 			path = ConnectMyCar;
 			sourceTree = "<group>";
@@ -195,6 +213,11 @@
 				TargetAttributes = {
 					5EA5C0A21BBB309200B188FA = {
 						CreatedOnToolsVersion = 6.3.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					5EA5C0BB1BBB309200B188FA = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -226,6 +249,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E2BB6461BC3DC22001A86ED /* logo.png in Resources */,
 				5EA5C0B21BBB309200B188FA /* Main.storyboard in Resources */,
 				5EA5C0B71BBB309200B188FA /* LaunchScreen.xib in Resources */,
 				5EA5C0B41BBB309200B188FA /* Images.xcassets in Resources */,
@@ -293,7 +317,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5EA5C0AF1BBB309200B188FA /* ViewController.m in Sources */,
+				5E8D40781BC2651200A58F9B /* MeasurementView.m in Sources */,
 				5EA5C0AC1BBB309200B188FA /* AppDelegate.m in Sources */,
+				5E8D407E1BC3A58100A58F9B /* BLEController.m in Sources */,
+				5E8D407B1BC3A56500A58F9B /* VehicleModel.m in Sources */,
 				5EA5C0A91BBB309200B188FA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

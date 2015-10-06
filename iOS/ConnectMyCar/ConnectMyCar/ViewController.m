@@ -16,6 +16,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.vehicleModel = [[VehicleModel alloc]init];
+    self.vehicleModel.speed = @"1";
+    self.messurmentView.vehicleModel = self.vehicleModel;
+    
+    self.connect.rac_command = self.vehicleModel.connectCommand;
+    
     // Do any additional setup after loading the view, typically from a nib.
 }
 

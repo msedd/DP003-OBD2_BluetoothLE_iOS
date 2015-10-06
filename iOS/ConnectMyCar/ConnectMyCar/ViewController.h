@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MeasurementView.h"
+#import "VehicleModel.h"
 
 @interface ViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet MeasurementView *messurmentView;
+@property (strong, nonatomic) VehicleModel* vehicleModel;
+@property (strong, nonatomic) IBOutlet UIButton *connect;
 
 @end
 
