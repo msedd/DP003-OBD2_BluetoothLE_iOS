@@ -11,7 +11,7 @@
 @implementation MeasurementView
 
 
-- (void)_drawSpeed:(NSString*) value {
+- (void)_drawMessurment:(NSString*) value {
     
     CGSize size = [value sizeWithAttributes:
                    @{NSFontAttributeName: [UIFont systemFontOfSize:52.0f]}];
@@ -43,28 +43,27 @@
 - (void)_drawCircleFrom:(CGFloat)startAngle to:(CGFloat)endAngle color:(UIColor *)color {
     CGPoint center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2);
     CGFloat radius = 70;
-    CGFloat arcWidth = 46;
+    CGFloat arcWidth = 30;
     UIBezierPath* path = [UIBezierPath bezierPath];
     [path addArcWithCenter:center radius:radius startAngle:startAngle endAngle:endAngle clockwise:true];
     path.lineWidth = arcWidth;
     
     
     [color setStroke];
-    [[UIColor blackColor] setFill];
     [path stroke];
-    [path fill];
 }
 
 - (void)drawRect:(CGRect)rect {
     
     
     CGFloat startAngle = 3 * M_PI / 4;
-    CGFloat endAngle = M_PI / 4;
+    CGFloat endAngle = M_PI*4 / 3;
+    //CGFloat endAngle = M_PI/4;
     UIColor* color = [UIColor greenColor];
     
     
     [self _drawCircleFrom:startAngle to:endAngle color:color];
-    [self _drawSpeed:self.vehicleModel.speed];
+    [self _drawMessurment:self.vehicleModel.speed];
     [self _drawLable:@"km/h"];
 
 }
