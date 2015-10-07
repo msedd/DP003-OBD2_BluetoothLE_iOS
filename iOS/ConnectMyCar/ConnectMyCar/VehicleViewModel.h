@@ -12,6 +12,7 @@
 
 @interface VehicleViewModel : NSObject {
     
+    
 }
 @property (strong, nonatomic) NSString *speed;
 @property BOOL enable;

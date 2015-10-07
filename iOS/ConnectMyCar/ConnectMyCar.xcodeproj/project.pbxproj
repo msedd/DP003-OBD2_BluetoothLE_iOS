@@ -105,10 +105,9 @@
 		5EA5C0A51BBB309200B188FA /* ConnectMyCar */ = {
 			isa = PBXGroup;
 			children = (
-				5E8D407C1BC3A58100A58F9B /* BLEController.h */,
-				5E8D407D1BC3A58100A58F9B /* BLEController.m */,
 				5EA5C0AA1BBB309200B188FA /* AppDelegate.h */,
 				5EA5C0AB1BBB309200B188FA /* AppDelegate.m */,
+				5EBEAAD71BC52C0B00EBEC52 /* model */,
 				5EBEAAD61BC5272B00EBEC52 /* View */,
 				5EA5C0B31BBB309200B188FA /* Images.xcassets */,
 				5EA5C0B51BBB309200B188FA /* LaunchScreen.xib */,
@@ -155,6 +154,15 @@
 				5EA5C0AE1BBB309200B188FA /* MessurementViewController.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		5EBEAAD71BC52C0B00EBEC52 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				5E8D407C1BC3A58100A58F9B /* BLEController.h */,
+				5E8D407D1BC3A58100A58F9B /* BLEController.m */,
+			);
+			name = model;
 			sourceTree = "<group>";
 		};
 		F39DD5C6ED2803D18A08F96C /* Pods */ = {

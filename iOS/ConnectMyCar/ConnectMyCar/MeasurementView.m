@@ -57,14 +57,26 @@
     
     
     CGFloat startAngle = 3 * M_PI / 4;
-    CGFloat endAngle = M_PI*4 / 3;
-    //CGFloat endAngle = M_PI/4;
+    //CGFloat endAngle = M_PI*4 / 3;
+    //
+    CGFloat spped = ((CGFloat)[self.vehicleModel.speed floatValue]);
+    
+    CGFloat endAngle = (spped+135)*1.2/180.0 * M_PI;
     UIColor* color = [UIColor greenColor];
     
-    
+    [self _drawCircleFrom:startAngle to:(M_PI/4) color:[UIColor darkGrayColor]];
     [self _drawCircleFrom:startAngle to:endAngle color:color];
     [self _drawMessurment:self.vehicleModel.speed];
     [self _drawLable:@"km/h"];
 
+}
+
+- (void)bindViewToModel:(VehicleViewModel*) model{
+    
+    _vehicleModel = model;
+    [RACObserve(self.vehicleModel, speed) subscribeNext:^(id x) {
+        [self setNeedsDisplay];
+        
+    }];
 }
 @end

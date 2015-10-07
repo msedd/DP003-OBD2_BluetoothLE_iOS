@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "VehicleViewModel.h"
 
-@interface MeasurementView : UIView
+@interface MeasurementView : UIView{
+}
 
-@property (strong, nonatomic) VehicleViewModel* vehicleModel;
+@property (readonly, strong, nonatomic) VehicleViewModel* vehicleModel;
+
+- (void)bindViewToModel:(VehicleViewModel*) model;
 
 @end

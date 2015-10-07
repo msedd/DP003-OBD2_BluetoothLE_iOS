@@ -13,7 +13,7 @@
 @interface MessurementViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet MeasurementView *messurmentView;
-@property (strong, nonatomic) VehicleViewModel* vehicleModel;
+@property (strong, nonatomic) VehicleViewModel* vehicleViewModel;
 @property (strong, nonatomic) IBOutlet UIButton *connect;
 
 @end

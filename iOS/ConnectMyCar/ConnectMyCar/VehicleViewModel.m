@@ -19,8 +19,7 @@
     [self.leController.updatedValueSignal subscribeNext:^(CBCharacteristic* characteristic) {
         NSData *data = characteristic.value;
         int value = (*(int*)([data bytes]));
-        NSString *speed = [NSString stringWithFormat:@"%d", value];
-        self.speed = speed;
+        self.speed = [NSString stringWithFormat:@"%d", value];
         NSLog(@"Speed: %d: km/h",value);
     }];
     

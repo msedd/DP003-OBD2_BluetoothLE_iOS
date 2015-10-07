@@ -17,12 +17,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.vehicleModel = [[VehicleViewModel alloc]init];
-    self.vehicleModel.speed = @"1";
-    self.messurmentView.vehicleModel = self.vehicleModel;
+    self.vehicleViewModel = [[VehicleViewModel alloc]init];
+    self.vehicleViewModel.speed = @"";
+    [self.messurmentView bindViewToModel:self.vehicleViewModel];
+    self.connect.rac_command = self.vehicleViewModel.connectCommand;
     
-    self.connect.rac_command = self.vehicleModel.connectCommand;
     
+    [self.messurmentView setNeedsUpdateConstraints];
 }
 
 - (void)didReceiveMemoryWarning {
