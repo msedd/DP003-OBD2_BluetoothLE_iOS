@@ -28,15 +28,14 @@
     return  self;
 }
 
-/** Scan for peripherals - specifically for our service's 128bit CBUUID
- */
+
 - (void)scan
 {
     /*
      [self.centralManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID]]
      options:@{ CBCentralManagerScanOptionAllowDuplicatesKey : @YES }];
      */
-    [self.centralManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:@"713D0000-503E-4C75-BA94-3148F18D941E"]] options:@{ CBCentralManagerScanOptionAllowDuplicatesKey : @YES }];
+    [self.centralManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:@"713D0000-503E-4C75-BA94-3148F18D941E"]] options:@{ CBCentralManagerScanOptionAllowDuplicatesKey : @NO }];
     
     NSLog(@"Scanning started");
 }
@@ -192,9 +191,9 @@
     
     NSData *data = characteristic.value;
     if(data != nil && [data length]==1){
-        [_updatedValueSignal sendNext:characteristic];
-        //int value = (*(int*)([data bytes]));
-        //NSLog(@"value for characteristic: %@: %d kmh",characteristic.UUID,value);
+        int value = (*(int*)([data bytes]));
+        [_updatedValueSignal sendNext:[NSNumber numberWithInt:value]];
+
     }
 }
 
@@ -210,9 +209,8 @@
     } else {
         NSData *data = characteristic.value;
         if(data != nil){
-            //int value = (*(int*)([data bytes]));
-            // NSLog(@"value for characteristic: %@: %d: kmh",characteristic.UUID,value);
-            [self.updatedValueSignal sendNext:characteristic];
+            int value = (*(int*)([data bytes]));
+            [_updatedValueSignal sendNext:[NSNumber numberWithInt:value]];
         }
         
     }

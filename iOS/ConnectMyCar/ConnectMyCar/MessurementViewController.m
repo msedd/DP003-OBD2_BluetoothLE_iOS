@@ -7,6 +7,7 @@
 //
 
 #import "MessurementViewController.h"
+#import "BLEController.h"
 
 @interface MessurementViewController ()
 
@@ -17,7 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.vehicleViewModel = [[VehicleViewModel alloc]init];
+    self.vehicleViewModel = [[VehicleViewModel alloc]initWithModel:[BLEController sharedController]];
     self.vehicleViewModel.speed = @"";
     [self.messurmentView bindViewToModel:self.vehicleViewModel];
     self.connect.rac_command = self.vehicleViewModel.connectCommand;

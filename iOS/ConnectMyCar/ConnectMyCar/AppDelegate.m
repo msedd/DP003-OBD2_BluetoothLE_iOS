@@ -21,7 +21,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
 
-    
+    [Fabric with:@[[Crashlytics class]]];
+
     return YES;
 }
 

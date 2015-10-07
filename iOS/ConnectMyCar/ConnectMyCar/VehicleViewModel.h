@@ -8,16 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
-#import "BLEController.h"
+#import "VehicleModel.h"
 
 @interface VehicleViewModel : NSObject {
     
     
 }
+
+- (id)initWithModel:(id <VehicleModel>)vehicleModel;
 @property (strong, nonatomic) NSString *speed;
 @property BOOL connected;
 @property (strong, nonatomic) NSString *state;
-@property BLEController* leController;
+@property id <VehicleModel> vehicleModel;
 @property RACCommand* connectCommand;
 @property RACCommand* disconnectCommand;
 

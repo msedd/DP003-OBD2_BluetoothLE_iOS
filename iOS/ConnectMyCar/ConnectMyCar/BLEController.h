@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import <CoreBluetooth/CoreBluetooth.h>
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "VehicleModel.h"
 
-@interface BLEController : NSObject <CBPeripheralDelegate, CBCentralManagerDelegate>{
+@interface BLEController : NSObject <CBPeripheralDelegate, CBCentralManagerDelegate, VehicleModel>{
 
 }
 @property (strong, nonatomic) CBCentralManager      *centralManager;
@@ -20,7 +21,5 @@
 @property (nonatomic, strong) RACSubject* leConnectedSignal;
 
 + (BLEController *)sharedController;
-- (void) connect;
-- (void) disconnect;
 
 @end

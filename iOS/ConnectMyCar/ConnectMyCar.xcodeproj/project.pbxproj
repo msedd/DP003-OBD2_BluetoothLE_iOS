@@ -51,6 +51,7 @@
 		5EA5C0BC1BBB309200B188FA /* ConnectMyCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ConnectMyCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5EA5C0C11BBB309200B188FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5EA5C0C21BBB309200B188FA /* ConnectMyCarTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConnectMyCarTests.m; sourceTree = "<group>"; };
+		5ED8884C1BC5B5780005AF8F /* VehicleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VehicleModel.h; sourceTree = "<group>"; };
 		A99540946B2D9B07B400E966 /* Pods-ConnectMyCar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ConnectMyCar.release.xcconfig"; path = "Pods/Target Support Files/Pods-ConnectMyCar/Pods-ConnectMyCar.release.xcconfig"; sourceTree = "<group>"; };
 		DA9CE37A1B28FFABE4B3DC87 /* libPods-ConnectMyCar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ConnectMyCar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -161,6 +162,7 @@
 			children = (
 				5E8D407C1BC3A58100A58F9B /* BLEController.h */,
 				5E8D407D1BC3A58100A58F9B /* BLEController.m */,
+				5ED8884C1BC5B5780005AF8F /* VehicleModel.h */,
 			);
 			name = model;
 			sourceTree = "<group>";

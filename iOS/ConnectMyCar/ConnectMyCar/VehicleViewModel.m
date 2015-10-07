@@ -11,23 +11,34 @@
 
 @implementation VehicleViewModel
 
-- (id)init{
+- (id)initWithModel:(id <VehicleModel>)vehicleModel{
     
-    self.leController = [BLEController sharedController];
+    self.vehicleModel = vehicleModel;
     [self _initCommands];
     
-    [self.leController.updatedValueSignal subscribeNext:^(CBCharacteristic* characteristic) {
-        NSData *data = characteristic.value;
-        int value = (*(int*)([data bytes]));
-        self.speed = [NSString stringWithFormat:@"%d", value];
-        NSLog(@"Speed: %d: km/h",value);
+    [self.vehicleModel.updatedValueSignal subscribeNext:^(NSNumber* speed) {
+        
+        if ([speed integerValue]==50) {
+        
+            [Answers logCustomEventWithName:@"SPEED LIMIT"
+                           customAttributes:@{
+                                              @"Driver" : @"MSE",
+                                              @"Speed" : speed}];
+         
+        }
+        self.speed = [speed stringValue];
+        NSLog(@"Speed: %@: km/h",[speed stringValue]);
     }];
     
-    [self.leController.leConnectedSignal subscribeNext:^(NSString* state) {
+    [self.vehicleModel.leConnectedSignal subscribeNext:^(NSString* state) {
         if ([state isEqualToString:@"CONNECTED"] ) {
+            [Answers logCustomEventWithName:@"BTLE CONNECTED"
+                           customAttributes:@{}];
             self.connected = true;
             [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
         }else{
+            [Answers logCustomEventWithName:@"BTLE DISCONNECTED"
+                           customAttributes:@{}];
             self.connected = false;
             [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
         }
@@ -38,13 +49,13 @@
 
 - (void) _initCommands{
     self.connectCommand = [[RACCommand alloc] initWithSignalBlock:^(id input) {
-        [self.leController connect];
+        [self.vehicleModel connect];
         return [RACSignal empty];
     }];
     
     self.disconnectCommand = [[RACCommand alloc] initWithSignalBlock:^(id input) {
         
-        [self.leController disconnect];
+        [self.vehicleModel disconnect];
         return [RACSignal empty];
     }];
 }
