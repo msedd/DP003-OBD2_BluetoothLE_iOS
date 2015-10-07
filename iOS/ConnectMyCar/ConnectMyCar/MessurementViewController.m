@@ -6,24 +6,23 @@
 //  Copyright (c) 2015 Developer Podcast. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MessurementViewController.h"
 
-@interface ViewController ()
+@interface MessurementViewController ()
 
 @end
 
-@implementation ViewController
+@implementation MessurementViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.vehicleModel = [[VehicleModel alloc]init];
+    self.vehicleModel = [[VehicleViewModel alloc]init];
     self.vehicleModel.speed = @"1";
     self.messurmentView.vehicleModel = self.vehicleModel;
     
     self.connect.rac_command = self.vehicleModel.connectCommand;
     
-    // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {

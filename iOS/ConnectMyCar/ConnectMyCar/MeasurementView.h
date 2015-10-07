@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "VehicleModel.h"
+#import "VehicleViewModel.h"
 
 @interface MeasurementView : UIView
 
-@property (strong, nonatomic) VehicleModel* vehicleModel;
+@property (strong, nonatomic) VehicleViewModel* vehicleModel;
 
 @end

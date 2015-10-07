@@ -10,7 +10,7 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "BLEController.h"
 
-@interface VehicleModel : NSObject {
+@interface VehicleViewModel : NSObject {
     
 }
 @property (strong, nonatomic) NSString *speed;

@@ -8,12 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import "MeasurementView.h"
-#import "VehicleModel.h"
+#import "VehicleViewModel.h"
 
-@interface ViewController : UIViewController
+@interface MessurementViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet MeasurementView *messurmentView;
-@property (strong, nonatomic) VehicleModel* vehicleModel;
+@property (strong, nonatomic) VehicleViewModel* vehicleModel;
 @property (strong, nonatomic) IBOutlet UIButton *connect;
 
 @end

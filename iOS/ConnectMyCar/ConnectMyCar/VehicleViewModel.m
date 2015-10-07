@@ -6,10 +6,10 @@
 //  Copyright (c) 2015 Developer Podcast. All rights reserved.
 //
 
-#import "VehicleModel.h"
+#import "VehicleViewModel.h"
 #import <Crashlytics/Crashlytics.h>
 
-@implementation VehicleModel
+@implementation VehicleViewModel
 
 - (id)init{
     
