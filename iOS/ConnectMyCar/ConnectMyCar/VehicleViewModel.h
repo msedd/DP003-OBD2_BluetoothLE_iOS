@@ -15,7 +15,7 @@
     
 }
 @property (strong, nonatomic) NSString *speed;
-@property BOOL enable;
+@property BOOL connected;
 @property (strong, nonatomic) NSString *state;
 @property BLEController* leController;
 @property RACCommand* connectCommand;

@@ -61,8 +61,8 @@
     //
     CGFloat spped = ((CGFloat)[self.vehicleModel.speed floatValue]);
     
-    CGFloat endAngle = (spped+135)*1.2/180.0 * M_PI;
-    UIColor* color = [UIColor greenColor];
+    CGFloat endAngle = (spped*1.3+140)/180.0 * M_PI;
+    UIColor* color = (self.vehicleModel.connected)?[UIColor greenColor]:[UIColor grayColor];
     
     [self _drawCircleFrom:startAngle to:(M_PI/4) color:[UIColor darkGrayColor]];
     [self _drawCircleFrom:startAngle to:endAngle color:color];
@@ -75,6 +75,10 @@
     
     _vehicleModel = model;
     [RACObserve(self.vehicleModel, speed) subscribeNext:^(id x) {
+        [self setNeedsDisplay];
+        
+    }];
+    [RACObserve(self.vehicleModel, connected) subscribeNext:^(id x) {
         [self setNeedsDisplay];
         
     }];

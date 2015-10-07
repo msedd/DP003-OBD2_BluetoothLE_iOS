@@ -25,8 +25,10 @@
     
     [self.leController.leConnectedSignal subscribeNext:^(NSString* state) {
         if ([state isEqualToString:@"CONNECTED"] ) {
+            self.connected = true;
             [[UIApplication sharedApplication] setIdleTimerDisabled:YES];
         }else{
+            self.connected = false;
             [[UIApplication sharedApplication] setIdleTimerDisabled:NO];
         }
         

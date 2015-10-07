@@ -36,13 +36,16 @@
      [self.centralManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:TRANSFER_SERVICE_UUID]]
      options:@{ CBCentralManagerScanOptionAllowDuplicatesKey : @YES }];
      */
-    [self.centralManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:@"713D0000-503E-4C75-BA94-3148F18D941E"]] options:@{ CBCentralManagerScanOptionAllowDuplicatesKey : @NO }];
+    [self.centralManager scanForPeripheralsWithServices:@[[CBUUID UUIDWithString:@"713D0000-503E-4C75-BA94-3148F18D941E"]] options:@{ CBCentralManagerScanOptionAllowDuplicatesKey : @YES }];
     
     NSLog(@"Scanning started");
 }
 - (void) centralManagerDidUpdateState:(CBCentralManager *)central{
     NSLog(@"BLE update state");
-    //[self scan];
+    if(self.discoveredPeripheral != nil)
+        [central connectPeripheral:self.discoveredPeripheral options:nil];
+    else
+        [self scan];
 }
 
 - (void)centralManager:(CBCentralManager *)central
@@ -188,7 +191,7 @@
     }
     
     NSData *data = characteristic.value;
-    if(data != nil){
+    if(data != nil && [data length]==1){
         [_updatedValueSignal sendNext:characteristic];
         //int value = (*(int*)([data bytes]));
         //NSLog(@"value for characteristic: %@: %d kmh",characteristic.UUID,value);

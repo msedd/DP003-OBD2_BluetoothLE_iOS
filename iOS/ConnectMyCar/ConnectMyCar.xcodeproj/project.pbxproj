@@ -108,7 +108,7 @@
 				5EA5C0AA1BBB309200B188FA /* AppDelegate.h */,
 				5EA5C0AB1BBB309200B188FA /* AppDelegate.m */,
 				5EBEAAD71BC52C0B00EBEC52 /* model */,
-				5EBEAAD61BC5272B00EBEC52 /* View */,
+				5EBEAAD61BC5272B00EBEC52 /* view */,
 				5EA5C0B31BBB309200B188FA /* Images.xcassets */,
 				5EA5C0B51BBB309200B188FA /* LaunchScreen.xib */,
 				5EA5C0A61BBB309200B188FA /* Supporting Files */,
@@ -142,7 +142,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5EBEAAD61BC5272B00EBEC52 /* View */ = {
+		5EBEAAD61BC5272B00EBEC52 /* view */ = {
 			isa = PBXGroup;
 			children = (
 				5E8D40791BC3A56500A58F9B /* VehicleViewModel.h */,
@@ -153,7 +153,7 @@
 				5EA5C0AD1BBB309200B188FA /* MessurementViewController.h */,
 				5EA5C0AE1BBB309200B188FA /* MessurementViewController.m */,
 			);
-			name = View;
+			name = view;
 			sourceTree = "<group>";
 		};
 		5EBEAAD71BC52C0B00EBEC52 /* model */ = {
