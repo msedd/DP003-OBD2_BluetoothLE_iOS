@@ -22,6 +22,7 @@
 
 - (id)init{
     
+    [[NSBundle mainBundle] objectForInfoDictionaryKey:@"BLUETOOTH_LE_SERVICE_UUID"];
     self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:nil options:@{ CBCentralManagerOptionRestoreIdentifierKey: @"myCentralManagerIdentifier" }];
     self.updatedValueSignal  = [RACSubject subject];
     self.leConnectedSignal  = [RACSubject subject];
@@ -174,7 +175,7 @@
     }
     for (CBCharacteristic *characteristic in service.characteristics) {
         NSLog(@"Discovered characteristic %@", characteristic);
-        //[peripheral readValueForCharacteristic:characteristic];
+        [peripheral readValueForCharacteristic:characteristic];
         [peripheral setNotifyValue:YES forCharacteristic:characteristic];
     }
 }
@@ -184,6 +185,7 @@
  */
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
+    
     NSLog(@"did update value for characteristic");
     if (error) {
         NSLog(@"Error discovering characteristics: %@", [error localizedDescription]);
@@ -207,12 +209,13 @@
         //[_updatedValueSignal sendError:error];
         
     } else {
+        /*
         NSData *data = characteristic.value;
         if(data != nil){
             int value = (*(int*)([data bytes]));
             [_updatedValueSignal sendNext:[NSNumber numberWithInt:value]];
         }
-        
+        */
     }
     
     

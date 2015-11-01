@@ -21,14 +21,11 @@
 COBD obd;
 int ledBtConnected = 3;
 int ledBtError = 2;
-int simulateSpeed = 4;
-
 
 void setup() {
 
   pinMode(ledBtConnected, OUTPUT);
   pinMode(ledBtError, OUTPUT);
-  pinMode(simulateSpeed, INPUT); 
 
   ble_set_pins(9,8);
   ble_set_name("OBD-II");
@@ -52,18 +49,13 @@ void loop() {
     bool state = obd.read(PID_SPEED, speed);
     digitalWrite(ledBtConnected, HIGH); 
 
-    int buttonSimulateSpeed = digitalRead(simulateSpeed);
-    if(buttonSimulateSpeed){
-      int i = (millis() % 100);
-      ble_write(i);
-    }
     if(state){
       digitalWrite(ledBtConnected, LOW); 
       ble_write(speed);
       ble_do_events();
       delay(200);
       digitalWrite(ledBtConnected, HIGH); 
-    }else{
+    } else{
       digitalWrite(ledBtError, HIGH);
       // reset,
       obd.init();

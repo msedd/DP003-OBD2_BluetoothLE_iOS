@@ -16,6 +16,8 @@
 */.DS_Store
 *-Storyboard.ppt
 
+*.xcf
+
 # Xcode
 .DS_Store
 */build/*
